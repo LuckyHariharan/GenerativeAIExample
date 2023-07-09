@@ -13,6 +13,3 @@
 .externalNativeBuild
 .cxx
 local.properties
-
-/palm_api/
-/palm_api/google-cloud-ai-generativelanguage-v1beta2-java/
