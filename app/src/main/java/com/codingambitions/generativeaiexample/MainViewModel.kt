@@ -19,8 +19,8 @@ class MainViewModel: ViewModel() {
 
 
     // Add the StateFlow
-    private val _output = MutableStateFlow(value = "")
-    val output: StateFlow<String>
+    private val _output = MutableStateFlow(HomeUIState(fetching = false))
+    val output: StateFlow<HomeUIState>
         get() = _output
 
     // Add this variable
@@ -31,13 +31,6 @@ class MainViewModel: ViewModel() {
         client = initializeTextServiceClient(
             apiKey = BuildConfig.PALM_API_KEY
         )
-
-        // Create the text prompt
-        val prompt = createPrompt("Repeat after me: one, two")
-
-        // Send the first request
-        val request = createTextRequest(prompt)
-        generateText(request)
     }
 
     private fun initializeTextServiceClient(
@@ -58,19 +51,17 @@ class MainViewModel: ViewModel() {
             .build()
 
         // Initialize a TextServiceClient
-        val textServiceClient = TextServiceClient.create(settings)
 
-        return textServiceClient
+        return TextServiceClient.create(settings)
     }
 
     private fun createPrompt(
         textContent: String
     ): TextPrompt {
-        val textPrompt = TextPrompt.newBuilder()
+
+        return TextPrompt.newBuilder()
             .setText(textContent)
             .build()
-
-        return textPrompt
     }
 
     private fun createTextRequest(prompt: TextPrompt): GenerateTextRequest {
@@ -87,18 +78,30 @@ class MainViewModel: ViewModel() {
     ) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
+                _output.update {
+                    HomeUIState(fetching = true)
+                }
                 val response = client.generateText(request)
                 val returnedText = response.candidatesList.last()
                 // display the returned text in the UI
-                _output.update { returnedText.output }
+                _output.update {
+                    HomeUIState(fetching = false,
+                        fetchedResponse = returnedText.output
+                    )
+                }
             } catch (e: Exception) {
                 // There was an error, let's add a new text with the details
-                _output.update { "API Error: ${e.message}" }
+                _output.update {
+                    HomeUIState(fetching = false,
+                        fetchedResponse = "API Error: ${e.message}"
+                    )
+                }
             }
         }
     }
 
     fun sendPrompt(textContent: String) {
+
         val prompt = createPrompt(textContent)
 
         // Send the first request

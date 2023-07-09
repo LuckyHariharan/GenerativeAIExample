@@ -20,7 +20,7 @@ android {
         }
 
         //set buildConfigField for PALM_API_KEY
-        buildConfigField("String", "PALM_API_KEY", System.getenv("PALM_API_KEY"))
+        buildConfigField("String", "PALM_API_KEY", "\"" + System.getenv("PALM_API_KEY") + "\"")
     }
 
     buildFeatures {
