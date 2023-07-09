@@ -1,0 +1,141 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.google.cloud",
+    "module": "gapic-google-cloud-ai-generativelanguage-v1beta2-java",
+    "version": "0.0.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "com.google.api",
+          "module": "gax",
+          "version": {
+            "requires": "2.26.0"
+          }
+        },
+        {
+          "group": "com.google.api",
+          "module": "gax-grpc",
+          "version": {
+            "requires": "2.26.0"
+          }
+        },
+        {
+          "group": "com.google.api",
+          "module": "gax-httpjson",
+          "version": {
+            "requires": "0.111.0"
+          }
+        },
+        {
+          "group": "io.grpc",
+          "module": "grpc-protobuf",
+          "version": {
+            "requires": "1.54.0"
+          }
+        },
+        {
+          "group": "com.google.api.grpc",
+          "module": "proto-google-cloud-ai-generativelanguage-v1beta2-java",
+          "version": {
+            "requires": "0.0.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "gapic-google-cloud-ai-generativelanguage-v1beta2-java-0.0.0-SNAPSHOT.jar",
+          "url": "gapic-google-cloud-ai-generativelanguage-v1beta2-java-0.0.0-SNAPSHOT.jar",
+          "size": 76511,
+          "sha512": "00af163cb303bcec3409ceed82bd6e06cbfbe623f1a1aa6e4537b931d4ca6f2e8c057cc81c0ad8b44c97dde5e912e148b61eed2ba96c081cafffaf7d24fab1c9",
+          "sha256": "8092e0d3ede0c4d8bc577d62fca816c230a130aa2594944695fba6b966a9cbf3",
+          "sha1": "bb6f6a81b7d3012804f4d09813de0d8dc06b0f76",
+          "md5": "ce95a5846d240700eee3a0451175f864"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "javax.annotation",
+          "module": "javax.annotation-api",
+          "version": {
+            "requires": "1.3.2"
+          }
+        },
+        {
+          "group": "com.google.api",
+          "module": "gax",
+          "version": {
+            "requires": "2.26.0"
+          }
+        },
+        {
+          "group": "com.google.api",
+          "module": "gax-grpc",
+          "version": {
+            "requires": "2.26.0"
+          }
+        },
+        {
+          "group": "com.google.api",
+          "module": "gax-httpjson",
+          "version": {
+            "requires": "0.111.0"
+          }
+        },
+        {
+          "group": "io.grpc",
+          "module": "grpc-protobuf",
+          "version": {
+            "requires": "1.54.0"
+          }
+        },
+        {
+          "group": "com.google.api.grpc",
+          "module": "proto-google-cloud-ai-generativelanguage-v1beta2-java",
+          "version": {
+            "requires": "0.0.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "gapic-google-cloud-ai-generativelanguage-v1beta2-java-0.0.0-SNAPSHOT.jar",
+          "url": "gapic-google-cloud-ai-generativelanguage-v1beta2-java-0.0.0-SNAPSHOT.jar",
+          "size": 76511,
+          "sha512": "00af163cb303bcec3409ceed82bd6e06cbfbe623f1a1aa6e4537b931d4ca6f2e8c057cc81c0ad8b44c97dde5e912e148b61eed2ba96c081cafffaf7d24fab1c9",
+          "sha256": "8092e0d3ede0c4d8bc577d62fca816c230a130aa2594944695fba6b966a9cbf3",
+          "sha1": "bb6f6a81b7d3012804f4d09813de0d8dc06b0f76",
+          "md5": "ce95a5846d240700eee3a0451175f864"
+        }
+      ]
+    }
+  ]
+}
