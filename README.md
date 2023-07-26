@@ -1,6 +1,6 @@
 # Generative AI Example #
 
-This is an example of integrating Generative AI in Android app
+How to use Google Generatve AI using Palm API in Android App using Jetpack Compose. 
 
 
 # How to Run this project #
